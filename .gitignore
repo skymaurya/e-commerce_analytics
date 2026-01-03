@@ -1,0 +1,11 @@
+# Ignore datasets
+datasets/
+
+# Ignore data files
+*.csv
+*.xlsx
+*.json
+
+# Ignore logs & backups
+*.log
+*.bak
