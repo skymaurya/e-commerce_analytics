@@ -12,7 +12,6 @@ Script Purpose:
 
 
 
-
 ------------ customer info tabble   DONE
 
 IF OBJECT_ID('raws.customers_info', 'U') IS NOT NULL
@@ -59,10 +58,11 @@ CREATE TABLE raws.orders_items(
     product_id              NVARCHAR(100),
     seller_id               NVARCHAR(100),
     shipping_limit_date     DATETIME2,
-    price                   DECIMAL,
-    freight_value           FLOAT
+    price                   DECIMAL(10,2),
+    freight_value           DECIMAL(10,2)
 
 );
+
 GO
 
 
@@ -77,10 +77,12 @@ CREATE TABLE  raws.order_payment(
     payment_sequence        INT,
     payment_type            NVARCHAR(20),
     payment_installments    INT,
-    payment_value           DECIMAL
+    payment_value           DECIMAL(10,2)
 
 );
+
 GO
+
 
 --------- ------orders reviews  table
 
@@ -121,6 +123,7 @@ CREATE TABLE raws.orders(
     ord_estimated_delivery_date     DATETIME2
 
 );
+
 GO
 
 ------------products info  table
