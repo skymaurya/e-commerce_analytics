@@ -73,10 +73,6 @@ BEGIN
 		TRUNCATE TABLE clean.cust_location;
 		PRINT '>> Inserting Data Into: clean.cust_location';
 
-
-
-		TRUNCATE TABLE clean.cust_location;
-
 		INSERT INTO clean.cust_location(
 			loc_zip_code,
 			loc_latitude,
@@ -132,7 +128,7 @@ BEGIN
 			TRIM(cust_id),
 			LOWER(TRIM(order_status)),
 			CASE
-				WHEN ord_purchase_date>ord_delivered_carrier_date THEN  NULL
+				WHEN ord_purchase_date>ord_delivered_carrier_date  OR ord_purchase_date>ord_approved_date THEN  NULL
 				ELSE ord_purchase_date
 			END AS ord_purchase_date,
 
@@ -329,8 +325,6 @@ BEGIN
         PRINT '>> -------------';
 
 
-
-
 		----============= product info table==================
 
 		
@@ -374,7 +368,6 @@ BEGIN
 		SET @end_time = GETDATE();
         PRINT '>> Load Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' seconds';
         PRINT '>> -------------';
-
 
 
 		---===============SELLER INFO ============

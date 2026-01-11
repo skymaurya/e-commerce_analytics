@@ -129,15 +129,14 @@ CREATE TABLE clean.orders(
     ord_delivered_carrier_date      DATETIME2,
     ord_delivered_customers_date    DATETIME2,
     ord_estimated_delivery_date     DATETIME2,
-    late_delivery_flg               TINYINT,
-    delivered_missing_dt_flg        TINYINT,
-    canceled_delivered_flg          TINYINT,
-    approved_not_shipped_flg        TINYINT,
-    shipped_not_delivered_flg       TINYINT,
+    late_delivery_flg               BIT,
+    delivered_missing_dt_flg        BIT,
+    canceled_delivered_flg          BIT,
+    approved_not_shipped_flg        BIT,
+    shipped_not_delivered_flg       BIT,
     dwh_create_date                 DATETIME2 DEFAULT GETDATE()
 
     CONSTRAINT pk_ord PRIMARY KEY (order_id)
-
 );
 
 GO
