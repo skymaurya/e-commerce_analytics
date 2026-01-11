@@ -1,5 +1,4 @@
 ---MAKING THE STORE PROCEDURE FOR THE 'raws' LAYER
-
 /*
 ===============================================================================
 Stored Procedure: Load raws Layer (Source -> raws)
@@ -7,8 +6,8 @@ Stored Procedure: Load raws Layer (Source -> raws)
 Script Purpose:
     This stored procedure loads data into the 'raws' schema from external CSV files. 
     It performs the following actions:
-    - Truncates the bronze tables before loading data.
-    - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
+    - Truncates the raws tables before loading data.
+    - Uses the `BULK INSERT` command to load data from csv Files to raws tables.
 
 Parameters:
     None. 
@@ -16,7 +15,10 @@ Parameters:
 
 Usage Example:
     EXEC raws.load_raws;
-===============================================================================
+
+WARNING: Comment the orders_reviews table load method before running this procedure beacuse it was loaded by using  
+          IMPORT  method  on csv file, as data was  to much messsy to use bulk insert method.
+==============================================================================================================
 */
 
 CREATE OR ALTER PROCEDURE raws.load_raws AS 
@@ -45,8 +47,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',   
+            DATAFILETYPE = 'char',   
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -72,9 +74,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
-            CODEPAGE = '65001',
+            ROWTERMINATOR = '0x0A',  
+            DATAFILETYPE = 'char',    
             MAXERRORS = 100
                 );
          SET @end_time=GETDATE();
@@ -83,15 +84,15 @@ BEGIN
         PRINT '-------------->'
 
 
-       /* 
         PRINT '------------------------------------------------';
 		PRINT 'Loading orders_reviews Table';
 		PRINT '------------------------------------------------';
 
-        *----------orders reviews
+        ----------orders reviews
 
         SET @start_time=GETDATE();
-        ---using import  method as file was to much messsy to use bulk method
+
+        ---using IMPORT  method for orders_reviews as file was to much messsy to use bulk method
 
         TRUNCATE TABLE raws.order_reviews;
 
@@ -102,8 +103,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',   
+            DATAFILETYPE = 'char',    
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -112,7 +113,7 @@ BEGIN
 
         PRINT'LOAD TIME -->> :' + CAST( DATEDIFF(SECOND,@start_time,@end_time) AS NVARCHAR) + 'seconds';
         PRINT '-------------->'
-        */
+      
 
         PRINT '------------------------------------------------';
 		PRINT 'Loading orders_reviews Table';
@@ -130,8 +131,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',   
+            DATAFILETYPE = 'char',   
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -156,8 +157,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',  
+            DATAFILETYPE = 'char',   
             CODEPAGE = '65001',
             MAXERRORS = 100
                 );
@@ -182,8 +183,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',  
+            DATAFILETYPE = 'char',    
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -208,8 +209,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',  
+            DATAFILETYPE = 'char',    
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -236,8 +237,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',   
+            DATAFILETYPE = 'char',    
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -264,8 +265,8 @@ BEGIN
             FIELDTERMINATOR = ',',
             FIELDQUOTE = '"',
             FIRSTROW = 2,
-            ROWTERMINATOR = '0x0A',   -- <— important change
-            DATAFILETYPE = 'char',    -- <— required for Express
+            ROWTERMINATOR = '0x0A',   
+            DATAFILETYPE = 'char',    
             CODEPAGE = '65001',
             MAXERRORS = 100
             );
@@ -294,4 +295,4 @@ BEGIN
 
 END
 
-EXEC raws.load_raws;
+
