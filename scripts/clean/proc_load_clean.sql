@@ -357,10 +357,25 @@ BEGIN
 			prd_name_len,
 			prd_description_len,
 			prd_photo_qty,
-			ROUND(prd_weight_g,3),
-			ROUND(prd_length_cm,2),
-			ROUND(prd_height_cm,2),
-			ROUND(prd_width_cm,2)
+			ROUND(CASE 
+					WHEN prd_weight_g <= 0 THEN NULL
+					ELSE prd_weight_g
+				END,3) AS prd_weight_g,
+
+			ROUND(CASE 
+					WHEN prd_length_cm <= 0 THEN NULL 
+					ELSE prd_length_cm 
+				END,2) AS prd_length_cm,
+
+			ROUND(CASE 
+					WHEN prd_height_cm <= 0 THEN NULL 
+					ELSE prd_height_cm 
+				END,2) AS prd_height_cm,
+
+			ROUND(CASE 
+					WHEN prd_width_cm  <= 0 THEN NULL 
+					ELSE prd_width_cm  
+				END,2) AS prd_width_cm
 
 		FROM raws.products_info
 		WHERE prd_id IS NOT NULL;
