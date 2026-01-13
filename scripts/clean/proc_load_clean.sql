@@ -248,8 +248,15 @@ BEGIN
 			TRIM(product_id),
 			TRIM(seller_id),
 			shipping_limit_date,
-			price,
-			freight_value
+			CASE 
+			   WHEN price < 0 THEN NULL
+			   ELSE price
+			END AS price,
+
+			CASE
+			   WHEN freight_value < 0 THEN NULL
+			   ELSE freight_value
+			END AS freight_value
 			FROM raws.orders_items
 			WHERE order_id IS NOT NULL AND order_item_id IS NOT NULL;
 
@@ -353,7 +360,10 @@ BEGIN
 		)
 		SELECT  
 			TRIM(prd_id),
-			LOWER(TRIM(prd_catg_name)),
+			CASE 
+				WHEN prd_catg_name IS NULL OR  TRIM(prd_catg_name)='' THEN 'unknown'
+				ELSE LOWER(TRIM(prd_catg_name))
+			END AS prd_catg_name,
 			prd_name_len,
 			prd_description_len,
 			prd_photo_qty,
@@ -385,7 +395,7 @@ BEGIN
         PRINT '>> -------------';
 
 
-		---===============SELLER INFO ============
+		---===============SELLERS INFO ============
 
 		PRINT '------------------------------------------------';
 		PRINT 'Loading sellers_info Tables';
