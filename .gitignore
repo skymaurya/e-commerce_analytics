@@ -1,5 +1,4 @@
-# Ignore datasets
-datasets/
+
 
 # Ignore data files
 *.csv
