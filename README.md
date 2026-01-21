@@ -137,12 +137,6 @@ These checks mimic **real analytics QA processes**.
 
 ---
 
-## 📌 Who This Project Is For
-
-✔ Data Analyst roles  
-✔ Analytics Engineer roles  
-✔ Business Intelligence roles  
-
 This repository focuses on **how data is analyzed**, not just how it is moved.
 
 ---
