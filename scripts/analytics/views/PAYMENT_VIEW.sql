@@ -1,12 +1,10 @@
 
-
 /*
 Purpose:
 	Analyzes payment behavior by payment method and installment count,
 	including revenue contribution and average order value.
 	Used to understand customer payment preferences and monetization.
 */
-
 
 CREATE OR ALTER VIEW  analytics.vw_payment_analysis AS 
 
