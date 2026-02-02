@@ -8,7 +8,6 @@ Purpose:
 
 CREATE OR ALTER VIEW analytics.vw_sellers_report AS
 
-
 	WITH base_sellers AS (
 	SELECT 
 			ds.seller_id,
@@ -20,6 +19,23 @@ CREATE OR ALTER VIEW analytics.vw_sellers_report AS
 	FROM analytics.dim_seller ds
 	LEFT JOIN  analytics.dim_location AS dm
 	ON ds.zip_code=dm.zip_code
+
+	),
+
+	late as (
+
+		SELECT
+		seller_sk,
+		ROUND( SUM(cast (is_late as float)) / COUNT(DISTINCT order_id),2) AS late_delivery_rate
+	FROM 
+	(
+	 SELECT
+			seller_sk,
+			order_id,
+			MAX(cast (late_delivery_flg AS int)) AS is_late
+		FROM analytics.fact_sales
+		GROUP BY seller_sk, order_id)t
+	GROUP BY seller_sk
 
 	),
 
@@ -39,12 +55,6 @@ CREATE OR ALTER VIEW analytics.vw_sellers_report AS
 	SELECT 
 		fs.seller_sk,
 		AVG(fr.review_score)								 AS avg_review_score,
-
-		ROUND(
-			CAST(SUM(CASE WHEN fs.late_delivery_flg=1 THEN 1
-			ELSE 0 END)AS FLOAT)/COUNT(DISTINCT fs.order_id),
-			2
-		)													 AS late_delivery_rate,
 		SUM(CASE WHEN fs.canceled_delivered_flg=1 THEN 1
 		ELSE 0 END)											 AS cancel_order_count
 
@@ -68,7 +78,7 @@ CREATE OR ALTER VIEW analytics.vw_sellers_report AS
 		sp.total_sales_value,
 		sp.avg_item_price ,
 		q.avg_review_score ,
-		q.late_delivery_rate,
+		b.late_delivery_rate,
 		q.cancel_order_count,
 		CASE
 			WHEN total_sales_value >= 50000 AND total_orders >= 100 AND avg_review_score >= 4.0 AND late_delivery_rate <= 0.10 THEN 'Top_Seller'
@@ -87,5 +97,6 @@ CREATE OR ALTER VIEW analytics.vw_sellers_report AS
 	LEFT JOIN sales_perform AS sp
 	ON bs.seller_sk=sp.seller_sk
 	LEFT JOIN seller_qualty AS q
-	ON bs.seller_sk=q.seller_sk;
-
+	ON bs.seller_sk=q.seller_sk
+	LEFT JOIN late AS b
+	on b.seller_sk=bs.seller_sk;
