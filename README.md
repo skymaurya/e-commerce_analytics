@@ -1,11 +1,15 @@
-# 📊 E-Commerce Analytics Project (Data Analyst Portfolio)
+
+🔗 Tableau Dashboard: [ Tableau Public Link  (https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product)]
+
+
+# 📊 E-Commerce Analytics Project (Data Analyst Portfolio)  :
 
 This project demonstrates a **business-focused analytics solution** built on top of an end-to-end SQL data warehouse.  
 The goal of this repository is **not data engineering tooling**, but **data analysis readiness**: clean data, reliable metrics, and business-answering views.
 
 ---
 
-## 🎯 Project Objective
+## 🎯 Project Objective :
 
 Design an analytics layer that enables stakeholders to answer key **business questions** related to:
 - Customer behavior & retention
@@ -14,11 +18,28 @@ Design an analytics layer that enables stakeholders to answer key **business que
 - Order lifecycle & funnel analysis
 - Payment method effectiveness
 
-This project mirrors a **real-world analytics workflow** used by data analysts.
+This project replicates a **real-world analytics workflow** used in modern data-driven organizations.
+
+## 📌 Business Problem Statement :
+
+The e-commerce platform needs visibility into:
+
+- Revenue growth and decline patterns
+
+- Customer retention and repeat purchase behavior
+
+- Seller reliability and delivery performance
+
+- Product performance and operational risk
+
+- Order funnel efficiency
+
+This project transforms raw transactional data into **decision-ready insights** for executives and operations teams.
+
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture Overview :
 
 The warehouse follows a classic **3-layer architecture**:
 
@@ -38,7 +59,7 @@ The warehouse follows a classic **3-layer architecture**:
 
 ---
 
-## 🧱 Data Model (Analytics Layer)
+## 🧱 Data Model (Analytics Layer) :
 
 **Dimensions**
 - `dim_customer`
@@ -61,7 +82,7 @@ All fact tables:
 
 ---
 
-## 📊 Business Analytics Views
+## 📊 Business Analytics Views :
 
 These views are the **primary deliverables for a Data Analyst**.
 
@@ -90,7 +111,70 @@ Each view:
 
 ---
 
-## ✅ Data Quality & Validation
+## 📈 Executive Dashboards (Tableau)  :
+
+The analytics views were used to build interactive executive dashboards in Tableau, transforming SQL outputs into stakeholder-ready insights.  
+
+---
+
+## 📊 Dashboard Modules 
+
+### 1️⃣ Executive Overview  
+
+- Revenue & order trend (2016–2018)  
+- Geographic revenue distribution  
+- Order funnel performance  
+- Late delivery analysis  
+
+---
+
+### 2️⃣ Customer Analytics  
+
+- Customer segmentation (New, Repeat, High Value, VIP)  
+- Retention funnel  
+- Customer lifespan & lifetime spending  
+- At-risk customer identification  
+
+---
+
+### 3️⃣ Seller Performance  
+
+- Revenue contribution by seller segment  
+- Late delivery rate analysis  
+- Seller concentration risk  
+- Top-performing seller identification  
+
+---
+
+### 4️⃣ Product Performance  
+
+- Category-level revenue analysis  
+- Product quality vs revenue relationship  
+- Late delivery by product segment  
+- Undelivered product analysis  
+
+---
+
+## 📌 Business Impact of Dashboards  :
+
+The dashboards were designed for:  
+
+- Executive-level monitoring  
+- Operational performance tracking  
+- Retention strategy planning  
+- Revenue growth decision support  
+
+---
+
+## 🛠 Tools Used  :
+
+- SQL Server (Data Warehouse Design)  
+- Tableau (Data Visualization & Dashboarding)  
+- Dimensional Modeling (Star Schema)  
+- Business KPI Design  
+
+
+## ✅ Data Quality & Validation :
 
 Validation scripts ensure:
 - No broken surrogate key joins
@@ -111,7 +195,7 @@ These checks mimic **real analytics QA processes**.
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Structure :
 
 ```
 /scripts
@@ -126,7 +210,7 @@ These checks mimic **real analytics QA processes**.
 
 ---
 
-## 💡 Skills Demonstrated
+## 💡 Skills Demonstrated :
 
 - SQL-based data analysis
 - Dimensional modeling (Star Schema)
@@ -134,10 +218,69 @@ These checks mimic **real analytics QA processes**.
 - Funnel & cohort analysis
 - Data quality validation
 - Documentation for stakeholders
+- Executive dashboard storytelling
+
 
 ---
 
-This repository focuses on **how data is analyzed**, not just how it is moved.
+This repository demonstrates how data is **transformed into actionable business insights**.
 
 ---
 
+## 📊 Executive Summary
+
+- This project converts raw e-commerce transactional data into a structured analytics layer and interactive dashboards.
+- The analysis reveals revenue growth patterns, customer retention risks, seller concentration dependency, and product-level operational issues, enabling data-driven business decisions.
+
+## 📌 Key Business Insights  :
+
+---
+
+### 🔹 Revenue Trends  
+
+- Strong growth in 2017  
+- Noticeable slowdown in 2018  
+
+---
+
+### 🔹 Customer Retention Risk  
+
+- 80% one-time buyers  
+- 57% at-risk customers  
+- Opportunity for loyalty programs  
+
+---
+
+### 🔹 Seller Concentration  
+
+- 50% revenue from growing seller segment  
+- Platform dependency risk identified  
+
+---
+
+### 🔹 Product Performance  
+
+- 4★+ rated products dominate revenue  
+- Inactive products linked to late deliveries  
+
+---
+
+### 🔹 Geographic Concentration  
+
+- Revenue concentrated in South/Southeast  
+- Expansion potential in emerging regions  
+
+
+## 🎯 Strategic Recommendations :
+
+Based on the analysis:
+
+- Launch retention campaigns targeting 57% at-risk customers
+
+- Diversify seller base to reduce revenue concentration risk
+
+- Promote high-rated product categories (4★+)
+
+- Improve logistics for inactive/low-volume product segments
+
+- Expand marketing in emerging states with growing revenue contribution

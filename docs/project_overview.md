@@ -1,19 +1,51 @@
-# Project Overview
+# 📌 Project Overview
 
-This project implements a full end-to-end data warehouse for an e-commerce dataset
-using SQL Server. The goal is to transform raw transactional data into an
-analytics-ready star schema with strong data quality guarantees.
+This project delivers a business-focused analytics solution for an
+e-commerce platform. It transforms raw transactional data into
+structured, reliable insights that support executive and operational
+decision-making.
 
-## Objectives
-- Build a layered data warehouse (RAW → CLEAN → ANALYTICS)
-- Apply dimensional modeling best practices
-- Ensure revenue and grain correctness
-- Implement data quality validation checks
+The primary goal is to enable clear visibility into revenue trends,
+customer behavior, seller performance, and operational efficiency.
 
-## Dataset
-- Public e-commerce dataset (orders, customers, products, sellers, payments, reviews)
+------------------------------------------------------------------------
 
-## Technology Stack
-- SQL Server
-- T-SQL (DDL, CTEs, Stored Procedures)
-- GitHub for version control
+## 🎯 Objectives
+
+-   Design a structured analytics layer using dimensional modeling
+-   Ensure metric accuracy and revenue reconciliation
+-   Build business-ready SQL views for reporting
+-   Create executive dashboards in Tableau
+-   Deliver actionable insights with strategic recommendations
+
+------------------------------------------------------------------------
+
+## 📊 Business Focus Areas
+
+-   Revenue growth & seasonal patterns
+-   Customer retention and repeat purchase behavior
+-   Seller reliability and operational risk
+-   Product performance and logistics issues
+-   Order funnel and lifecycle analysis
+
+------------------------------------------------------------------------
+
+## 🗂 Dataset
+
+Public Brazilian e-commerce dataset including:
+
+-   Orders
+-   Customers
+-   Products
+-   Sellers
+-   Payments
+-   Reviews
+
+------------------------------------------------------------------------
+
+## 🛠 Technology Stack
+
+-   SQL Server (Data Modeling & Transformation)
+-   T-SQL (CTEs, Stored Procedures, Validation)
+-   Tableau (Dashboarding & Visualization)
+-   GitHub (Version Control & Documentation)
