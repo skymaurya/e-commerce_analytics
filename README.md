@@ -1,11 +1,9 @@
 
 🔗 Tableau Dashboard: [ Tableau Public Link  (https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product)]
 
+# 🛒 E-Commerce Analytics | SQL + Tableau | End-to-End Business Insights
 
-# 📊 E-Commerce Analytics Project (Data Analyst Portfolio)  :
-
-This project demonstrates a **business-focused analytics solution** built on top of an end-to-end SQL data warehouse.  
-The goal of this repository is **not data engineering tooling**, but **data analysis readiness**: clean data, reliable metrics, and business-answering views.
+This project analyzes e-commerce data to uncover key business insights related to **customer behavior, sales performance, and operational efficiency** using SQL and Tableau.
 
 ---
 
@@ -61,6 +59,8 @@ The warehouse follows a classic **3-layer architecture**:
 
 ## 🧱 Data Model (Analytics Layer) :
 
+The following data model supports analytical reporting and dashboard creation:
+
 **Dimensions**
 - `dim_customer`
 - `dim_product`
@@ -85,6 +85,7 @@ All fact tables:
 ## 📊 Business Analytics Views :
 
 These views are the **primary deliverables for a Data Analyst**.
+These views simulate **real-world data marts used by analysts for reporting and dashboards**.
 
 ### 🔹 Customer Analytics
 - `vw_customers_report` – 360° customer profile & segmentation
@@ -238,8 +239,7 @@ This repository demonstrates how data is **transformed into actionable business 
 
 ### 🔹 Revenue Trends  
 
-- Strong growth in 2017  
-- Noticeable slowdown in 2018  
+-Revenue grew significantly in 2017 but slowed in 2018, indicating potential market saturation
 
 ---
 
@@ -281,6 +281,6 @@ Based on the analysis:
 
 - Promote high-rated product categories (4★+)
 
-- Improve logistics for inactive/low-volume product segments
+- Optimize logistics to reduce late deliveries in low-performing product segments
 
 - Expand marketing in emerging states with growing revenue contribution
