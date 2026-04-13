@@ -1,9 +1,48 @@
 
-🔗 Tableau Dashboard: [ Tableau Public Link  (https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product)]
+🔗 Tableau Dashboard: [Dashboard Link](https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product?publish=yes)
+---
 
 # 🛒 E-Commerce Analytics | SQL + Tableau | End-to-End Business Insights
 
 This project analyzes e-commerce data to uncover key business insights related to **customer behavior, sales performance, and operational efficiency** using SQL and Tableau.
+
+---
+## 📌 Key Business Insights  :
+
+---
+
+### 🔹 Revenue Trends  
+
+- Revenue grew significantly in 2017 but slowed in 2018, indicating potential market saturation.
+
+---
+
+### 🔹 Customer Retention Risk  
+
+- 80% one-time buyers  
+- 57% at-risk customers  
+- Opportunity for loyalty programs  
+
+---
+
+### 🔹 Seller Concentration  
+
+- 50% revenue from growing seller segment  
+- Platform dependency risk identified  
+
+---
+
+### 🔹 Product Performance  
+
+- 4★+ rated products dominate revenue  
+- Inactive products linked to late deliveries  
+
+---
+
+### 🔹 Geographic Concentration  
+
+- Revenue concentrated in South/Southeast  
+- Expansion potential in emerging regions  
 
 ---
 
@@ -39,21 +78,8 @@ This project transforms raw transactional data into **decision-ready insights** 
 
 ## 🏗️ Architecture Overview :
 
-The warehouse follows a classic **3-layer architecture**:
-
-### 1️⃣ RAW Layer
-- Source system ingestion (no transformations)
-- Mirrors operational data structure
-
-### 2️⃣ CLEAN Layer
-- Data cleansing & standardization
-- Business rule enforcement (invalid dates, flags)
-- One-to-one mapping with source entities
-
-### 3️⃣ ANALYTICS Layer
-- Star-schema dimensional model
-- Fact & dimension tables
-- Business-ready analytics views
+🏗️ Data Pipeline  
+RAW → CLEAN → ANALYTICS layer (star schema for reporting)
 
 ---
 
@@ -121,39 +147,39 @@ The analytics views were used to build interactive executive dashboards in Table
 ## 📊 Dashboard Modules 
 
 ### 1️⃣ Executive Overview  
-
 - Revenue & order trend (2016–2018)  
 - Geographic revenue distribution  
 - Order funnel performance  
 - Late delivery analysis  
+![Executive Dashboard](docs/dashboards/Executive_dashboard.png)
 
 ---
 
 ### 2️⃣ Customer Analytics  
-
 - Customer segmentation (New, Repeat, High Value, VIP)  
 - Retention funnel  
 - Customer lifespan & lifetime spending  
 - At-risk customer identification  
+![Customers Dashboard](docs/dashboards/Customers_dashboard.png)
 
 ---
 
 ### 3️⃣ Seller Performance  
-
 - Revenue contribution by seller segment  
 - Late delivery rate analysis  
 - Seller concentration risk  
 - Top-performing seller identification  
+![Sellers Dashboard](docs/dashboards/Sellers_dashboard.png)
 
 ---
 
 ### 4️⃣ Product Performance  
-
 - Category-level revenue analysis  
 - Product quality vs revenue relationship  
 - Late delivery by product segment  
-- Undelivered product analysis  
-
+- Undelivered product analysis
+![Products Dashboard](docs/dashboards/product_dashboard.png)
+  
 ---
 
 ## 📌 Business Impact of Dashboards  :
@@ -174,7 +200,7 @@ The dashboards were designed for:
 - Dimensional Modeling (Star Schema)  
 - Business KPI Design  
 
-
+---
 ## ✅ Data Quality & Validation :
 
 Validation scripts ensure:
@@ -233,43 +259,7 @@ This repository demonstrates how data is **transformed into actionable business 
 - This project converts raw e-commerce transactional data into a structured analytics layer and interactive dashboards.
 - The analysis reveals revenue growth patterns, customer retention risks, seller concentration dependency, and product-level operational issues, enabling data-driven business decisions.
 
-## 📌 Key Business Insights  :
-
 ---
-
-### 🔹 Revenue Trends  
-
--Revenue grew significantly in 2017 but slowed in 2018, indicating potential market saturation
-
----
-
-### 🔹 Customer Retention Risk  
-
-- 80% one-time buyers  
-- 57% at-risk customers  
-- Opportunity for loyalty programs  
-
----
-
-### 🔹 Seller Concentration  
-
-- 50% revenue from growing seller segment  
-- Platform dependency risk identified  
-
----
-
-### 🔹 Product Performance  
-
-- 4★+ rated products dominate revenue  
-- Inactive products linked to late deliveries  
-
----
-
-### 🔹 Geographic Concentration  
-
-- Revenue concentrated in South/Southeast  
-- Expansion potential in emerging regions  
-
 
 ## 🎯 Strategic Recommendations :
 
@@ -279,7 +269,7 @@ Based on the analysis:
 
 - Diversify seller base to reduce revenue concentration risk
 
-- Promote high-rated product categories (4★+)
+- Promote high-rated product categories (4+ rated)
 
 - Optimize logistics to reduce late deliveries in low-performing product segments
 
