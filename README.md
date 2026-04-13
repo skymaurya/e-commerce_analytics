@@ -1,5 +1,5 @@
 
-🔗 Tableau Dashboard: [Dashboard Link](https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product?publish=yes)
+🔗 Tableau Public Dashboard: [Dashboard Link](https://public.tableau.com/app/profile/akash.maurya3794/viz/E-CommerceAnalyticsDashboards_17705097981670/Product?publish=yes)
 ---
 
 # 🛒 E-Commerce Analytics | SQL + Tableau | End-to-End Business Insights
@@ -150,7 +150,8 @@ The analytics views were used to build interactive executive dashboards in Table
 - Revenue & order trend (2016–2018)  
 - Geographic revenue distribution  
 - Order funnel performance  
-- Late delivery analysis  
+- Late delivery analysis
+- 
 ![Executive Dashboard](docs/dashboards/Executive_dashboard.png)
 
 ---
@@ -159,7 +160,8 @@ The analytics views were used to build interactive executive dashboards in Table
 - Customer segmentation (New, Repeat, High Value, VIP)  
 - Retention funnel  
 - Customer lifespan & lifetime spending  
-- At-risk customer identification  
+- At-risk customer identification
+  
 ![Customers Dashboard](docs/dashboards/Customers_dashboard.png)
 
 ---
@@ -168,8 +170,9 @@ The analytics views were used to build interactive executive dashboards in Table
 - Revenue contribution by seller segment  
 - Late delivery rate analysis  
 - Seller concentration risk  
-- Top-performing seller identification  
-![Sellers Dashboard](docs/dashboards/Sellers_dashboard.png)
+- Top-performing seller identification
+  
+![Sellers Dashboard](docs/dashboards/sellers_dashboard.png)
 
 ---
 
@@ -178,6 +181,7 @@ The analytics views were used to build interactive executive dashboards in Table
 - Product quality vs revenue relationship  
 - Late delivery by product segment  
 - Undelivered product analysis
+  
 ![Products Dashboard](docs/dashboards/product_dashboard.png)
   
 ---
